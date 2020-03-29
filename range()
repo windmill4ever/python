@@ -1,0 +1,27 @@
+在python3中
+
+print(range(10))
+range(0,10) 
+
+
+得出的结果是 range(0,10) ，而不是[0,1,2,3,4,5,6,7,8,9] ，为什么呢？
+
+而且原来Python2版本中的xrange也已经取消。
+
+官网原话：
+
+In many ways the object returned by range() behaves as if it is a list, but in fact it isn’t. It is an object which returns the successive items of the desired sequence when you iterate over it, but it doesn’t really make the list, thus saving space.
+
+We say such an object is iterable, that is, suitable as a target for functions and constructs that expect something from which they can obtain successive items until the supply is exhausted. We have seen that the for statement is such an iterator. The function list() is another; it creates lists from iterables:
+
+翻译：
+
+可以看到上面这个很奇怪，在很多种情况下，range()函数返回的对象的行为都很像一个列表，但是它确实不是一个列表，它只是在迭代的情况下返回指定索引的值，但是它并不会在内存中真正产生一个列表对象，这样也是为了节约内存空间。
+
+我们称这种对象是可迭代的，或者是可迭代对象，还有一种对象叫迭代器，它们需要从一个可迭代对象中连续获取指定索引的值，一直到索引结束。list()函数就是这样一个迭代器，它可以把range()函数返回的对象变成一个列表。
+
+总结：
+
+range() 函数返回的是一个可迭代对象（类型是对象），而不是列表类型， 所以打印的时候不会打印列表。
+
+list() 函数是对象迭代器，把对象转为一个列表。返回的变量类型为列表。
