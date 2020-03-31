@@ -9,6 +9,7 @@ plt.scatter(x_values,y_values,c= y_values,cmap =plt.cm.Blues, edgecolor = 'none'
             A scalar or sequence of n numbers to be mapped to colors using cmap and norm.
             A 2-D array in which the rows are RGB or RGBA.
             y_values值越大，cmap颜色越深
+            colormap颜色映射，渐变色
                    
 plt.title('square numbers',fontsize = 24)
 plt.xlabel('value',fontsize = 14)
