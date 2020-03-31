@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
 
+
+plt.figure(dpi=128,figsize = (10,6))
+                        #必须放在plot\scatter的前面
+plt.plot(x_values,y_values,c='blue',linewidth =1)
+
 plt.scatter(x_values,y_values,c= 'red',edgecolor = 'none',s= 5)
 plt.scatter(x_values,y_values,c= y_values,cmap =plt.cm.Blues, edgecolor = 'none',s= 5)
 # c accept :ccolor, sequence, or sequence of colors, optional
@@ -21,4 +26,11 @@ plt.tick_params(axis = 'both',which = 'major',labelsize = 14)
 
 plt.axis([0,1000,0,1100000])
 plt.savefig('squares_plot.png',bbox_inches = 'tight')
+                #Bbox in inches. Only the given portion of the figure is saved. 
+                If 'tight', try to figure out the tight bbox of the figure. 
+                If None, use savefig.
+                
+plt.axes().get_xaxis().set_visible(False)
+plt.axes().get_yaxis().set_visible(False)
+                #False True
 plt.show()
