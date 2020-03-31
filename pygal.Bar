@@ -1,0 +1,17 @@
+frequencies = []
+
+for value in range(1,die.num_sides+1):
+    frequency = results.count(value)
+    frequencies.append(frequency)
+
+hist = pygal.Bar()
+
+hist.title = 'Result of 100 D6'
+hist.x_title = 'result'
+hist.y_title = 'frequency of result'
+
+
+hist.x_labels = ['a','b','c','d','e','f']
+hist.add('D6',frequencies)
+
+hist.render_to_file('die_visual.svg')
