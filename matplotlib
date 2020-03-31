@@ -17,6 +17,7 @@ plt.tick_params(axis = 'both',which = 'major',labelsize = 14)
                 #刻度 Default is 'major'; apply arguments to which ticks.
                 which{'major', 'minor', 'both'}
                 axis{'x','y','both'}
-  
+
 plt.axis([0,1000,0,1100000])
+plt.savefig('squares_plot.png',bbox_inches = 'tight')
 plt.show()
