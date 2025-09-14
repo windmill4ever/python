@@ -1,12 +1,11 @@
 import matplotlib.pyplot as plt
 
+plt.figure(dpi=128,figsize = (10,6))  #必须放在scatter的前面
 
-plt.figure(dpi=128,figsize = (10,6))
-                        #必须放在plot\scatter的前面
-plt.plot(x_values,y_values,c='blue',linewidth =1)
-
-plt.scatter(x_values,y_values,c= 'red',edgecolor = 'none',s= 5)
-plt.scatter(x_values,y_values,c= y_values,cmap =plt.cm.Blues, edgecolor = 'none',s= 5)
+plt.plot(x_values,y_values,c='blue',linewidth =1)    #折线
+plt.scatter(x_values,y_values,c= 'red',edgecolor = 'none',s= 5)  #散点
+plt.scatter(x_values,y_values,c= y_values, cmap =plt.cm.Blues, edgecolor = 'none',s= 5)
+'''
 # c accept :ccolor, sequence, or sequence of colors, optional
             The marker color. Possible values:
             A single color format string.
@@ -15,22 +14,27 @@ plt.scatter(x_values,y_values,c= y_values,cmap =plt.cm.Blues, edgecolor = 'none'
             A 2-D array in which the rows are RGB or RGBA.
             y_values值越大，cmap颜色越深
             colormap颜色映射，渐变色
+'''
                    
 plt.title('square numbers',fontsize = 24)
 plt.xlabel('value',fontsize = 14)
 plt.ylabel('square',fontsize = 14)
 plt.tick_params(axis = 'both',which = 'major',labelsize = 14)
-                #刻度 Default is 'major'; apply arguments to which ticks.
-                which{'major', 'minor', 'both'}
-                axis{'x','y','both'}
+'''
+    #刻度which Default is 'major'; apply arguments to which ticks.
+    which  {'major', 'minor', 'both'}
+    axis  {'x','y','both'}
+'''
 
 plt.axis([0,1000,0,1100000])
-plt.savefig('squares_plot.png',bbox_inches = 'tight')
-                #Bbox in inches. Only the given portion of the figure is saved. 
-                If 'tight', try to figure out the tight bbox of the figure. 
-                If None, use savefig.
+plt.savefig('squares_plot.png',bbox_inches = 'tight')    #保存图片
+'''
+    #Bbox in inches. Only the given portion of the figure is saved. 
+    If 'tight', try to figure out the tight bbox of the figure. 
+    If None, use savefig.
+'''
                 
 plt.axes().get_xaxis().set_visible(False)
 plt.axes().get_yaxis().set_visible(False)
-                #False True
+
 plt.show()
